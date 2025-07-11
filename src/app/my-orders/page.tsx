@@ -28,7 +28,7 @@ useEffect(() => {
       return
     }
 
-    console.log('👤 Connected user:', u.email)
+    
     setUser(u)
 
     const ordersRef = collection(db, 'orders')
@@ -45,7 +45,7 @@ useEffect(() => {
     const unsubscribeSnapshot = onSnapshot(
       q,
       (snapshot) => {
-        console.log('📦 Orders found:', snapshot.size)
+       
         const data = snapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data()
@@ -68,10 +68,10 @@ useEffect(() => {
   if (!user) return null
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+     <div className="flex flex-col min-h-screen bg-gradient-to-r from-purple-100 to-white">
       <HeaderResponsive />
-      <main className="flex-grow max-w-7xl mx-auto py-10 px-4">
-        <div className="bg-white shadow rounded-lg p-6">
+        <main  style={{ marginTop: '130px' }} className="">
+        <div className="bg-gradient-to-r from-purple-100 to-white  shadow rounded-lg overflow-x-auto max-w-7xl mx-auto">
           <div className="flex justify-between items-center mb-4">
             <div>
               <h1 className="text-xl font-semibold text-gray-900">My Orders</h1>

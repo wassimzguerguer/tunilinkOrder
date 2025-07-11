@@ -8,8 +8,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-geist-sans, Arial, Helvetica, sans-serif);
+  --font-mono: var(--font-geist-mono, monospace);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +19,40 @@
   }
 }
 
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* 🚀 يمنع الشريط الأفقي */
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  font-size: 14px;
+}
+main {
+  margin-top: 2rem;
+}
+
+table {
+  table-layout: auto;
+  word-break: break-word;
+  
+}
+.table-wrapper {
+  overflow-x: auto;
+}
+
+th,
+td {
+  word-break: break-word;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
